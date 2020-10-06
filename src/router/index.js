@@ -7,7 +7,7 @@ import Record from '../views/record/Record.vue'
 import Item from '../views/item/Item.vue'
 import Detail from '../views/detail/Detail.vue'
 import Edit from '../views/edit/Edit.vue'
-
+import Test from '../views/test/Test.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -18,6 +18,7 @@ export default new Router({
       {path: '/mine', component: Mine, meta: {showFooter: true}},
       {path: '/record', component: Record },
       {path: '/item', component: Item},
+      {path: '/test', component: Test},
       {path: '/detail', component: Detail},
       {path: '/edit', component: Edit}
     ]

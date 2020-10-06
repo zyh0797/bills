@@ -53,8 +53,10 @@
     }
     .container {
         width: 100%;
+        height: 100%;
         position: fixed;
         top: 45px;
+        overflow: scroll;
     }
     .no_data {
         width: 100%;
