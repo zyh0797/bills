@@ -12,8 +12,8 @@
                     <div class="title">收支类型</div>
                     <div class="show">
                         <template>
-                            <el-radio v-model="isIncome" label="0">收入</el-radio>
-                            <el-radio v-model="isIncome" label="1">支出</el-radio>
+                            <el-radio v-model="isIncome" label="0">支出</el-radio>
+                            <el-radio v-model="isIncome" label="1">收入</el-radio>
                         </template>
                     </div>
                 </div>
@@ -89,7 +89,7 @@
     export default{
         data(){
             return{
-                isIncome: '0',
+                isIncome: '1',
                 showIncome: true,
                 pay_type: [
                     {value:0,label:'微信'},
@@ -133,10 +133,27 @@
                 }
                 console.log(this.isIncome,this.value,this.type_1,this.type_2,this.number,this.remark,this.time)
                 this.$router.replace('/record')
+            },
+            getInfo(){
+                let self = this;
+                let op = this.$route.query.op;
+                if(op == 1){
+                    this.isIncome = '0';
+                    this.showIncome = false;
+                    this.value = 1;
+                    this.type_1 = 1;
+                    this.type_2 = 2;
+                    this.time = "2020-10-09 14:07:50";
+                    this.number = 1000;
+                    this.remark = '没有备注';
+                }
             }
         },
         components:{
             Header
+        },
+        created(){
+            this.getInfo()
         },
         watch:{
             isIncome(newValue,oldValue){

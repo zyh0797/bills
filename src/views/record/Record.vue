@@ -80,7 +80,7 @@
                 return obj;
             },
             goEdit(){
-                this.$router.push('/edit');
+                this.$router.push({path:'/edit',query:{op:0}});
             },
             isSub(val){
                 return val == 1

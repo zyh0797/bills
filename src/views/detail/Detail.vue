@@ -5,6 +5,9 @@
                 <i class="iconfont iconarrow-lift"></i>
             </span>
             <span slot="center-slot">详情</span>
+            <span slot="right-slot" @click="deleteIt">
+                <i class="iconfont iconashbin"></i>
+            </span>
         </Header>
         <div class="container">
             <div class="type_info">
@@ -39,7 +42,6 @@
 </template>
 <script>
     import Header from '../../components/header/Header'
-    import {MessageBox} from 'mint-ui'
     export default{
         data(){
             return {
@@ -51,12 +53,10 @@
                 this.$router.back(-1)
             },
             edit(){
-                MessageBox.prompt("请输入备注内容").then(({value,action}) => {
-                    if(value == '' || value == null){
-                        return;
-                    }
-                    this.remark = value;
-                })
+                this.$router.push({path:'/edit',query:{op:1}});
+            },
+            deleteIt(){
+                console.log('delete')
             }
         },
         components:{Header}
