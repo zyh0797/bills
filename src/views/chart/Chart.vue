@@ -38,7 +38,6 @@
             <div class="out_count_box">
                 <div id="out_chart" :style="{width: '100%', height: '200px', padding: '0 8px'}"></div>
             </div>
-            <div class="out_count_box"></div>
         </div>
     </div>
 </template>
@@ -159,22 +158,29 @@
     }
     .top_box {
         width: 100%;
-        height: 120px;
+        height: 130px;
         background-color: #3163c7;
         color: #fff;
     }
     .chart_container {
         width: 100%;
-        height: 100%;
+        height: calc(100% - 180px);
         position: fixed;
-        top: 120px;
+        top: 130px;
         left: 0;
-        overflow: scroll;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+    .out_count_box {
+        width: 100%;
+        height: 200px;
+        background-color: #fff;
+        margin-top: 5px;
     }
     .item {
         width: 100%;
-        height: 40px;
-        line-height: 40px;
+        height: 50px;
+        line-height: 50px;
         font-size: 14px;
     }
     .item .title {
@@ -218,11 +224,5 @@
         float: left;
         text-align: center;
         font-size: 10px;
-    }
-    .out_count_box {
-        width: 100%;
-        height: 200px;
-        background-color: #fff;
-        margin-top: 5px;
     }
 </style>
