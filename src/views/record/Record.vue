@@ -162,11 +162,11 @@
     }
     .container {
         width: 100%;
-        height: 100%;
+        height: calc(100% - 100px);
         position: fixed;
         top: 45px;
         left: 0;
-        overflow: scroll;
+        overflow-y: scroll;
     }
     .label_box {
         width: 100%;
